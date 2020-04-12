@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# variable to store the monitor name
+monitor=$(bspc -query -M --names | grep eDP)
+monitor1=$(bspc -query -M --names | grep HDMI)
+
 sh /home/biraj/.config/bspwm/monitormg.sh
 sh /home/biraj/.config/bspwm/autostart.sh
 

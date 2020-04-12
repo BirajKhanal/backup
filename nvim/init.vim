@@ -18,6 +18,8 @@ set shiftwidth=4
 set shiftround
 set expandtab
 set hlsearch!
+set spell
+set spelllang=en_us
 set shell=/usr/bin/zsh
 "theme
 if (has("termguicolors"))
@@ -75,7 +77,6 @@ Plug 'ryanoasis/vim-devicons'
 
 " surrounds commands
 Plug 'tpope/vim-surround'
-Plug 'yukunlin/auto-pairs'
 
 " indent 
 Plug 'yggdroot/indentline'
@@ -178,6 +179,8 @@ nmap <leader>wq :wq<cr>
 " move between vim split
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
 
 " open terminal in nvim
 nmap <leader>T :bo 15sp +te<cr>

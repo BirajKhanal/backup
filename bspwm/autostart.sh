@@ -10,9 +10,6 @@ killall dunst
 killall picom
 
 #----Autostart commands----#
-# variable to store the monitor name
-monitor=$(bspc -query -M --names | grep e)
-monitor1=$(bspc -query -M --names | grep H)
 
 # application to started after login
 sxhkd &
