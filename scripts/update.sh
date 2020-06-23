@@ -16,7 +16,6 @@ function sync_in {
     rsync -ra /home/biraj/.config/polybar /home/biraj/backup/ &
     rsync -ra /home/biraj/.config/sxhkd /home/biraj/backup/ &
     rsync -ra /home/biraj/.local/share/fonts /home/biraj/backup/ &
-    rsync -ra /home/biraj/.local/share/icons /home/biraj/backup/ &
 }
 
 function sync_out {

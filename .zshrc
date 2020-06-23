@@ -12,8 +12,6 @@ fi
 export ZSH="/home/biraj/.oh-my-zsh"
 export VISUAL EDITOR=nvim
 export PATH=$PATH:/home/biraj/.local/bin
-export EMAIL_USER="ghostsnipe047@gmail.com"
-export EMAIL_PASS="snipeghost123"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
