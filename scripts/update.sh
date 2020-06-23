@@ -9,7 +9,7 @@ function sync_in {
     rsync -ra /home/biraj/.config/alacritty /home/biraj/backup/ &
     rsync -ra /home/biraj/.config/ranger /home/biraj/backup/ &
     rsync -ra /home/biraj/.zshrc /home/biraj/backup/ &
-    rsync -ra /home/biraj/.config/compton /home/biraj/backup/ &
+    rsync -ra /home/biraj/.config/picom /home/biraj/backup/ &
     rsync -ra /home/biraj/.config/dunst /home/biraj/backup/ &
     rsync -ra /home/biraj/scripts /home/biraj/backup/ &
     rsync -ra /home/biraj/.config/bspwm /home/biraj/backup/ &
@@ -27,7 +27,7 @@ function sync_out {
     rsync -ra  /home/biraj/backup/alacritty  /home/biraj/.config/alacritty &
     rsync -ra  /home/biraj/backup/ranger  /home/biraj/.config/ranger &
     rsync -ra  /home/biraj/backup/.zshrc  /home/biraj/.zshrc &
-    rsync -ra  /home/biraj/backup/compton  /home/biraj/.config/picom.conf &
+    rsync -ra  /home/biraj/backup/picom  /home/biraj/.config/picom/picom.conf &
     rsync -ra  /home/biraj/backup/dunst  /home/biraj/.config/dunst &
     rsync -ra  /home/biraj/backup/scripts  /home/biraj/scripts &
     rsync -ra  /home/biraj/backup/bspwm  /home/biraj/.config/bspwm &

@@ -8,6 +8,7 @@ killall polybar bar2
 killall sxhkd
 killall dunst
 killall picom
+killall flameshot
 
 #----Autostart commands----#
 
@@ -15,11 +16,11 @@ killall picom
 sxhkd &
 polybar bar1 &
 polybar bar2 &
-xset led on
-flameshot &
 nm-applet &
-picom --config ~/.config/compton/compton.conf  &
+xset led on
+xinput set-prop 12 341 1
+picom --config ~/.config/picom/picom.conf &
 optimus-manager-qt &
+flameshot &
 dunst &
 udiskie &
-

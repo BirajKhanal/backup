@@ -174,7 +174,6 @@ inoremap jj <esc>
 " save and quit made easier
 nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
-nmap <leader>wq :wq<cr>
 
 " move between vim split
 nmap <C-l> <C-w>l
@@ -205,3 +204,5 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+autocmd FileType json syntax match Comment +\/\/.\+$+

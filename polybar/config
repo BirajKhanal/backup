@@ -17,9 +17,9 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #00000000
-background-alt = #00000000
+; background = ${xrdb:color0:#222}
+background = #252733 	
+background-alt = #252733
 ;foreground = ${xrdb:color7:#222}
 foreground = #5e81ac
 foreground-alt = #00000000
@@ -33,7 +33,7 @@ calander = #98971a
 battery = #b16286
 
 [bar/bar1]
-monitor = eDP-1
+monitor = eDP-1-1
 width = 100%
 height = 24
 offset-x = 0
@@ -56,7 +56,7 @@ font-3 = FontAwesome:size=10;0
 
 modules-left = bspwm 
 modules-center = date
-modules-right = backlight-acpi pulseaudio updates-arch-combined memory cpu battery 
+modules-right = wlan backlight-acpi pulseaudio memory cpu battery  
 
 tray-position = right
 tray-padding = 0
@@ -74,7 +74,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/bar2]
-monitor = HDMI-1
+monitor = HDMI-1-1
 width = 100%
 height = 24
 offset-x = 0
@@ -153,32 +153,35 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-0 = "1;"
-ws-icon-1 = "2;"
-ws-icon-2 = "3; "
-ws-icon-3 = "4;嗢"
-ws-icon-4 = "5;溜"
-ws-icon-5 = "6;ﱮ"
-ws-icon-6 = "7;切"
-ws-icon-7 = "8;"
-ws-icon-8 = "9; "
-ws-icon-default =" " 
+ws-icon-0 = "1;"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+ws-icon-5 = "6;"
+ws-icon-6 = "7;"
+ws-icon-7 = "8;"
+ws-icon-8 = "9;"
+ws-icon-default ="" 
 
 format = <label-state> <label-mode>
 
 label-focused = %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-font = 2
-label-focused-underline= ${colors.primary}
+; label-focused-underline= ${colors.primary}
 label-focused-padding = 1
+label-focused-foreground = ${colors.primary}
 
 label-occupied = %icon%
 label-occupied-font = 2
 label-occupied-padding = 1
+label-occupied-foreground = ${colors.secondary}
 
-label-urgent = %icon%!
+label-urgent = %icon%
 label-urgent-font = 2
-label-urgent-background = ${colors.alert}
+; label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 
 label-empty = %icon%
@@ -241,24 +244,25 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlo1
-interval = 3.0
+interval = 2.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
+format-connected = <label-connected>
+; format-connected-underline = #9f78e1
+label-connected = %essid%  %downspeed:2%  %upspeed:2%
+ping-interval = 2
+accumulate-stats = true
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+; ramp-signal-0 = 
+; ramp-signal-1 = 
+; ramp-signal-2 = 
+; ramp-signal-3 = 
+; ramp-signal-4 = 
+; ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
@@ -280,14 +284,13 @@ format-disconnected =
 type = internal/date
 interval = 60
 
-date = "%Y %b %d (%a)"
-time = "%I:%M %p"
-
+date = "%A, %B %d"
+time = "%H:%M" 
 ; format-prefix ="  "
 format-prefix-foreground = ${colors.calander}
-format-underline = ${colors.calander}
+; format-underline = ${colors.calander}
 
-label = %time% - %date% 
+label = %date%, %time% 
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -353,13 +356,13 @@ full-at = 100
 label-charging =  "%percentage%%"
 label-discharging =  "%percentage%%"
 
-format-charging = <animation-charging><label-charging>
+format-charging = <animation-charging> <label-charging>
 ; format-charging-underline = ${colors.battery}
 
 format-discharging = <ramp-capacity> <label-discharging>
 ; format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "  "
 format-full-prefix-foreground = ${colors.battery}
 ; format-full-underline = ${self.format-charging-underline}
 
@@ -367,7 +370,7 @@ ramp-capacity-0 =" "
 ramp-capacity-1 =" " 
 ramp-capacity-2 =" "
 ramp-capacity-3 =" "
-ramp-capacity-4 =" "
+ramp-capacity-4 ="  "
 ramp-capacity-foreground = ${colors.battery}
 
 animation-charging-0 =" "
