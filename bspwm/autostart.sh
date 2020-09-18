@@ -19,6 +19,7 @@ polybar bar2 &
 nm-applet &
 xset led on
 xinput set-prop 12 341 1
+xinput set-prop 12 342 1
 picom --config ~/.config/picom/picom.conf &
 optimus-manager-qt &
 flameshot &

@@ -169,7 +169,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " change exit insert mode from esc
-inoremap jj <esc>
+inoremap jk <esc>
 
 " save and quit made easier
 nmap <leader>w :w<cr>
