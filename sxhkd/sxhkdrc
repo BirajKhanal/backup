@@ -23,7 +23,8 @@ super + r
 
 # program launcher
 super + ctrl + Return
-   dmenu_run -h 24 -fn 'mononoki Nerd Font:size=11' -nb '#282a36' -nf '#ffffff' -sb '#bd93f9' -sf '#282a36'
+    rofi -show drun -show-icons -font 'mononoki Nerd Font 11'
+# dmenu_run -h 24 -fn 'mononoki Nerd Font:size=11' -nb '#282a36' -nf '#ffffff' -sb '#bd93f9' -sf '#282a36'
 
 # make sxhkd reload its configuration files:
 super + Escape

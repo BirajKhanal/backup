@@ -27,14 +27,14 @@ if (has("termguicolors"))
 endif
 
 " Theme
-colorscheme OceanicNext
+" colorscheme OceanicNext
+" let g:tokyonight_style = 'storm' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+" colorscheme tokyonight
+colorscheme onehalfdark
 let g:lightline={
    \ 'colorscheme' : 'nord'
    \}
-
-" NERDTree
-"git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
-"vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 " latex pdf live preview changed to zathura
 let g:livepreview_previewer = 'zathura'
@@ -43,16 +43,17 @@ let g:livepreview_previewer = 'zathura'
 let g:Hexokinase_highlighters = ['backgroundfull']
 let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,triple_hex'
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeShowHidden=1
-let g:NERDSpaceDelims = 1
-
-nmap <leader>t :NERDTreeToggle<Enter>
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>Q :qa!<CR>
 nmap <leader>d :w !diff % -<CR>
 nmap <leader>D :bd<CR>
+
+" netrw settings
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 15
+nmap <leader>t :Lexplore<CR>
 
 call plug#begin('~/.vim/plugged')
 
@@ -96,11 +97,10 @@ Plug 'prettier/vim-prettier'
 
 Plug 'tell-k/vim-autopep8'
 
-" nerdtree
-Plug 'preservim/nerdtree'
-
 " theme
 Plug 'mhartington/oceanic-next'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'sonph/onehalf'
 
 " latex plugin
 Plug 'lervag/vimtex'
@@ -176,10 +176,18 @@ nmap <leader>w :w<cr>
 nmap <leader>q :q<cr>
 
 " move between vim split
-nmap <C-l> <C-w>l
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
+nmap sl  <C-w>l
+nmap sh <C-w>h
+nmap sj  <C-w>j
+nmap sk  <C-w>k
+
+"split windows
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+"switch tab
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
 
 " open terminal in nvim
 nmap <leader>T :bo 15sp +te<cr>

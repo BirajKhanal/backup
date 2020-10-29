@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/biraj/.config/nvim'
+let g:netrw_dirhist_3='/home/biraj/.config'
+let g:netrw_dirhist_2='/home/biraj/.config/nvim'
+let g:netrw_dirhist_1='/home/biraj/.config'
+let g:netrw_dirhist_0='/home/biraj/.config/nvim'
+let g:netrw_dirhist_9='/home/biraj'
+let g:netrw_dirhist_8='/home/biraj/.vim/plugged'
+let g:netrw_dirhist_7='/home/biraj/.vim'
+let g:netrw_dirhist_6='/home/biraj'
+let g:netrw_dirhist_5='/home/biraj/.nv'
